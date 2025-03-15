@@ -1,10 +1,12 @@
 pipeline {
-    agent: "mcr.microsoft.com/playwright:v1.51.0-noble"
+    agent any
 
     stages{
         stage('Clean Up') {
             steps {
                 echo "Musheer"
+                sh "apt update"
+                sh "npx playwright test"
             }
         }
     }
